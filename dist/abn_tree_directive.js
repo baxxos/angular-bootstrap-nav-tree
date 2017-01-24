@@ -19,7 +19,7 @@
         link: function(scope, element, attrs) {
           var error, expand_all_parents, expand_level, for_all_ancestors, for_each_branch, get_parent, n, on_treeData_change, select_branch, selected_branch, tree;
           error = function(s) {
-            console.log('ERROR:' + s);
+            console.err('ABN TREE ERROR', s);
             debugger;
             return void 0;
           };
@@ -140,7 +140,6 @@
                 return b.uid = "" + Math.random();
               }
             });
-            console.log('UIDs are set.');
             for_each_branch(function(b) {
               var child, _i, _len, _ref, _results;
               if (angular.isArray(b.children)) {
@@ -241,7 +240,7 @@
             });
           }
           n = scope.treeData.length;
-          console.log('num root branches = ' + n);
+          /* console.log('num root branches = ' + n); */
           for_each_branch(function(b, level) {
             b.level = level;
             return b.expanded = b.level < expand_level;
