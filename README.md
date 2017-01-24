@@ -1,5 +1,10 @@
 angular-bootstrap-nav-tree
 ==========================
+MODS:
+The original code treated tree entries as plaintext values. I needed them to behave like clickable HTML links so ng-href="{{ row.href }}" was added to each list item. The row.href URL can be specified along with other parameters such as label:
+ 
+ $scope.my_data = [{ label: 'Root of the tree', href: '#/subpage/123', classes: ["special", "red"] }]
+
 
 This is a Tree directive for Angular JS apps that use Bootstrap CSS.
 
